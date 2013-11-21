@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>表单</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5">
+    <link href="../styles/jquery.mobile-1.3.2.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.mobile-1.3.2.min.js"></script>
+</head>
+<body>
+
+
+<div data-role="page" id="home">
+
+
+    <form action="/cust/cust.e" method="post" data-transition="flip" >
+        <div data-role="fieldcontain">
+            <label for="text">文本输入框</label>
+            <input type="text" name="text" id="text" value=""/>
+        </div>
+
+        <div data-role="fieldcontain">
+            <label for="textarea">文本输入域</label>
+            <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+        </div>
+
+        <div data-role="fieldcontain">
+            <label for="search">搜索输入框</label>
+            <input type="search" name="search" id="search" value=""/>
+        </div>
+
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <legend>单选框:</legend>
+                <input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1"/>
+                <label for="radio-choice-1">蓝</label>
+                <input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2"/>
+                <label for="radio-choice-2">绿</label>
+                <input type="radio" name="radio-choice-1" id="radio-choice-3" value="choice-3"/>
+                <label for="radio-choice-3">黑</label>
+            </fieldset>
+        </div>
+
+
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <legend>复选框</legend>
+                <input type="checkbox" name="blue" id="effect1" class="custom"/>
+                <label for="effect1">效果1</label>
+                <input type="checkbox" name="green" id="effect2" class="custom"/>
+                <label for="effect2">效果2</label>
+                <input type="checkbox" name="pink" id="effect2" class="custom"/>
+                <label for="effect2">效果3</label>
+            </fieldset>
+        </div>
+
+        <div data-role="fieldcontain">
+            <label for="select-choice-1" class="select">选择列表</label>
+            <select data-native-menu="false" name="select-choice-1" id="select-choice-1" multiple="multiple">
+                <option value="12h" disabled="disabled">12小时</option>
+                <option value="1d">一天</option>
+                <option value="2d">两天</option>
+                <option value="week">一周</option>
+            </select>
+        </div>
+
+        <div data-role="fieldcontain">
+            <label for="slider">滑杆</label>
+            <input type="range" name="slider" id="slider" value="0" min="0" max="100"/>
+        </div>
+
+
+        <div data-role="fieldcontain">
+            <label for="slider">开关</label>
+            <select name="slider" id="shakeToClear" data-role="slider">
+                <option value="off">关闭</option>
+                <option value="on">开启</option>
+            </select>
+        </div>
+
+        <div data-role="fieldcontain">
+            <label for="search">提交表单</label>
+            <input type="submit" value="提交表单啦"/>
+        </div>
+        <a    href="#next" data-role="button">跳转</a>
+
+    </form>
+
+
+</div>
+
+
+    <div id="next" data-role="page">
+        <input type="button" value="来到2次元">
+    </div>
+
+</body>
+</html>
+<script type="text/javascript">
+
+    $(function(){
+
+       // $("a").html("hahah");
+        //选中第一个radio
+        $("input[type='radio']:first").attr("checked",true).checkboxradio("refresh");
+        //选中第一个复选框
+        $("input[type='checkbox']:first").attr("checked",true).checkboxradio("refresh");
+        //选中第一个列表
+        var myselect = $('select#select-choice-1');
+        myselect[0].selectedIndex = 1;
+        myselect.selectmenu('refresh');
+
+        //设置滑干40
+        $("input[type=range]").val(40).slider("refresh");
+        //开关
+        var myswitch2 = $('select#shakeToClear');
+        myswitch2[0].selectedIndex = 1;
+        myswitch2.slider('refresh');
+
+    });
+
+</script>
