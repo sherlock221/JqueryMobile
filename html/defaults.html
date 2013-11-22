@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>默认配置</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5">
+    <link href="../styles/jquery.mobile-1.3.2.min.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../scripts/mobile.defaults.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.mobile-1.3.2.min.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="home">
+
+    <input type="radio" name="r1" id="r1" />
+    <label for="r1">测试</label>
+
+    <div data-role="collapsible">
+        　 <h3>I'm a header</h3>
+        　 <p>I'm the collapsible content. By default I'm open and displayed on the page, but you can click the header to hide me.</p>
+    </div>
+
+    <a href="foo.html" data-rel="dialog">Open dialog</a>
+
+</div>
+
+
+</body>
+</html>
+        <script type="text/javascript">
+
+            $(function(){
+                $.mobile.test();
+            });
+
+        </script>

@@ -44,14 +44,14 @@
 
 
         <div data-role="fieldcontain">
-            <fieldset data-role="controlgroup" data-type="horizontal">
+            <fieldset data-role="controlgroup" data-type="horizontal" >
                 <legend>复选框</legend>
                 <input type="checkbox" name="blue" id="effect1" class="custom"/>
                 <label for="effect1">效果1</label>
                 <input type="checkbox" name="green" id="effect2" class="custom"/>
                 <label for="effect2">效果2</label>
-                <input type="checkbox" name="pink" id="effect2" class="custom"/>
-                <label for="effect2">效果3</label>
+                <input type="checkbox" name="pink" id="effect3" class="custom"/>
+                <label for="effect3">效果3</label>
             </fieldset>
         </div>
 
@@ -65,15 +65,15 @@
             </select>
         </div>
 
-        <div data-role="fieldcontain">
+        <div data-role="fieldcontain" >
             <label for="slider">滑杆</label>
-            <input type="range" name="slider" id="slider" value="0" min="0" max="100"/>
+            <input data-enhance="false"  data-highlight="true"  type="range" name="slider" id="slider" value="0" min="0" max="100"/>
         </div>
 
 
         <div data-role="fieldcontain">
             <label for="slider">开关</label>
-            <select name="slider" id="shakeToClear" data-role="slider">
+            <select name="slider" id="shakeToClear" data-role="slider"   >
                 <option value="off">关闭</option>
                 <option value="on">开启</option>
             </select>
